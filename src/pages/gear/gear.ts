@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CharacterService } from '../../app/characterService';
+import { WeaponsPage } from '../weapons/weapons';
+import { ArmorPage } from '../armor/armor';
+import { EquipmentPage } from '../equipment/equipment';
+import { BiowarePage } from '../bioware/bioware';
+import { CyberneticsPage } from '../cybernetics/cybernetics';
 
 /**
  * Generated class for the GearPage page.
@@ -21,6 +26,26 @@ export class GearPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private characterService: CharacterService) {
     this.data = this.characterService.getCharacter();
+  }
+
+  openWeaponsPage(){
+    this.navCtrl.push(WeaponsPage);
+  }
+
+  openArmorPage(){
+    this.navCtrl.push(ArmorPage);
+  }
+
+  openEquipmentPage(){
+    this.navCtrl.push(EquipmentPage);
+  }
+  
+  openCyberneticsPage(){
+    this.navCtrl.push(CyberneticsPage);
+  }
+  
+  openBiowarePage(){
+    this.navCtrl.push(BiowarePage);
   }
 
   ionViewDidLoad() {

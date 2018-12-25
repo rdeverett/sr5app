@@ -12,6 +12,11 @@ import { AttributesPage } from '../pages/attributes/attributes';
 import { SkillsPage } from '../pages/skills/skills';
 import { GearPage } from '../pages/gear/gear';
 import { CombatPage } from '../pages/combat/combat';
+import { WeaponsPage } from '../pages/weapons/weapons';
+import { ArmorPage } from '../pages/armor/armor';
+import { EquipmentPage } from '../pages/equipment/equipment';
+import { CyberneticsPage } from '../pages/cybernetics/cybernetics';
+import { BiowarePage } from '../pages/bioware/bioware';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { CombatPage } from '../pages/combat/combat';
     SkillsPage,
     GearPage,
     CombatPage,    
-    TabsPage
+    TabsPage,
+    WeaponsPage,
+    ArmorPage,
+    EquipmentPage,
+    CyberneticsPage,
+    BiowarePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +45,12 @@ import { CombatPage } from '../pages/combat/combat';
     SkillsPage,
     GearPage,
     CombatPage,    
-    TabsPage
+    TabsPage,
+    WeaponsPage,
+    ArmorPage,
+    EquipmentPage,
+    CyberneticsPage,
+    BiowarePage
   ],
   providers: [
     StatusBar,
