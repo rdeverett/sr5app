@@ -18,6 +18,7 @@ import { EquipmentPage } from '../pages/equipment/equipment';
 import { CyberneticsPage } from '../pages/cybernetics/cybernetics';
 import { BiowarePage } from '../pages/bioware/bioware';
 import { WeapondetailPage } from '../pages/weapondetail/weapondetail';
+import { CyberwareDetailPage } from '../pages/cyberware-detail/cyberware-detail';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { WeapondetailPage } from '../pages/weapondetail/weapondetail';
     EquipmentPage,
     CyberneticsPage,
     BiowarePage,
-    WeapondetailPage
+    WeapondetailPage,
+    CyberwareDetailPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { WeapondetailPage } from '../pages/weapondetail/weapondetail';
     EquipmentPage,
     CyberneticsPage,
     BiowarePage,
-    WeapondetailPage
+    WeapondetailPage,
+    CyberwareDetailPage
   ],
   providers: [
     StatusBar,

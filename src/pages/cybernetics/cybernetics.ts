@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CharacterService } from '../../app/characterService';
+import { CyberwareDetailPage } from '../cyberware-detail/cyberware-detail';
 
 /**
  * Generated class for the CyberneticsPage page.
@@ -21,6 +22,11 @@ export class CyberneticsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private characterService: CharacterService) {
     this.data = this.characterService.getCharacter();
+  }
+
+  openCyberwareDetail(cyberware){
+    console.log("Cyberware selected:", cyberware);
+    this.navCtrl.push(CyberwareDetailPage, {cyberware: cyberware});
   }
 
   ionViewDidLoad() {

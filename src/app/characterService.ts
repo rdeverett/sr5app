@@ -1,5 +1,5 @@
 export class CharacterService{
-    
+
     private data = {
         "public": {
            "program": {

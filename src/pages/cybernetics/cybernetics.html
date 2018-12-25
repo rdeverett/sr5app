@@ -13,11 +13,10 @@
   
   </ion-header>
   
-  
   <ion-content padding>
       <h2 style="text-align:center;" >Cybernetics</h2>
       <ion-list>
-          <button ion-item *ngFor="let cyberware of data.public.character.gear.augmentation.cyberware" (click)="openDetail(weapon)">
+          <button ion-item *ngFor="let cyberware of data.public.character.gear.augmentations.cyberware" (click)="openCyberwareDetail(cyberware)">
             {{cyberware.name}}
           </button>
       </ion-list> 
