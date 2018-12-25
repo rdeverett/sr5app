@@ -21,19 +21,19 @@
       <ion-item>
           <span>Type</span> <span item-end>{{ weapon.weaponinfo.grouptext }}</span>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="weapon.size != null">
           <span>Size</span> <span item-end>{{ weapon.size }}</span>
       </ion-item>
       <ion-item>
           <span>Damage</span> <span item-end>{{ weapon.weaponinfo.damagetext }}</span>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="weapon.weaponinfo.ranges != null">
           <span>Range</span> <span item-end>{{ weapon.weaponinfo.ranges.text }}</span>
       </ion-item>
       <ion-item>
         <span>Cost</span> <span item-end>{{ weapon.gearcost.text }}</span>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="weapon.availability.text != ''">
           <span>Availability</span> <span item-end>{{ weapon.availability.text }}</span>
       </ion-item>      
   </ion-list> 
