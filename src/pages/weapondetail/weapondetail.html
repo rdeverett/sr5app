@@ -27,6 +27,12 @@
       <ion-item>
           <span>Damage</span> <span item-end>{{ weapon.weaponinfo.damagetext }}</span>
       </ion-item>
+      <ion-item *ngIf="weapon.weaponinfo.ap != null">
+          <span>AP</span> <span item-end>{{ weapon.weaponinfo.ap }}</span>
+      </ion-item>
+      <ion-item *ngIf="weapon.weaponinfo.rc != null">
+          <span>Recoil Comp.</span> <span item-end>{{ weapon.weaponinfo.rc }}</span>
+      </ion-item>
       <ion-item *ngIf="weapon.weaponinfo.ranges != null">
           <span>Range</span> <span item-end>{{ weapon.weaponinfo.ranges.text }}</span>
       </ion-item>

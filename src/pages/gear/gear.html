@@ -19,12 +19,14 @@
     <ion-list>
       <button ion-item (click)="openWeaponsPage()">
         Weapons
+        <ion-badge item-end>{{data.public.character.gear.weapons.length}}</ion-badge>
       </button>
       <button ion-item (click)="openArmorPage()">
         Armor
       </button>
       <button ion-item (click)="openEquipmentPage()">
         Equipment
+        <ion-badge item-end>{{data.public.character.gear.equipment.length}}</ion-badge>
       </button>
     </ion-list> 
 
@@ -32,9 +34,12 @@
     <ion-list>
         <button ion-item (click)="openCyberneticsPage()">
           Cybernetics
+          <ion-badge item-end>{{data.public.character.gear.augmentations.cyberware.length}}</ion-badge>
         </button>
+
         <button ion-item (click)="openBiowarePage()">
         Bioware
+        <ion-badge item-end>{{data.public.character.gear.augmentations.bioware.length}}</ion-badge>
         </button>
       </ion-list> 
 

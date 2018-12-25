@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CharacterService } from '../../app/characterService';
 
 /**
  * Generated class for the CyberneticsPage page.
@@ -12,10 +13,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-cybernetics',
   templateUrl: 'cybernetics.html',
+  providers: [CharacterService]
 })
 export class CyberneticsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public data = null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private characterService: CharacterService) {
+    this.data = this.characterService.getCharacter();
   }
 
   ionViewDidLoad() {
