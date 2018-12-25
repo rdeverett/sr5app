@@ -13,7 +13,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private characterService: CharacterService) {
 
-    this.data = characterService.getCharacter();
+    this.data = this.characterService.getCharacter();
 
   }
 
