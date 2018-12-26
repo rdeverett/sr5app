@@ -7,17 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ data.public.character.name }}</ion-title>
-  </ion-navbar>
+    <ion-title>
+      <img src="../assets/imgs/shadowruntitle.jpg" alt="title" style="width: 225px; height: 40px; margin-left: auto; margin-right: auto; display: block;">
+    </ion-title>
+    <!-- <ion-title>{{ data.public.character.name }}</ion-title> -->
+  </ion-navbar> 
 
-</ion-header>
+</ion-header> 
 
 <ion-content padding>
 
-    <h2 style="text-align:center;" >Info</h2>
+    <h2 style="text-align:center;">{{ data.public.character.name }}</h2>
 
     <ion-list>
 
+      <ion-img src="../assets/imgs/shadowrunhuman.jpg" alt="characterPortait" style="width: 200px; height: 250px; margin-left: auto; margin-right: auto; display: block;"></ion-img>
+      <br>
       <ion-item>
         <span>Race</span> <span item-end>{{ data.public.character.race.name }}</span>
       </ion-item>
