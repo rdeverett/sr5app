@@ -1,0 +1,41 @@
+<!--
+  Generated template for the EquipmentdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ equipment.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="equipment.description.length > 350 && isShowMoreEnabled==false">
+    {{equipment.shortDescription}}...
+    <button (click)="showMore()">Show More</button>
+    <br><br>
+    </div>        
+    <div *ngIf="equipment.description.length <= 350||isShowMoreEnabled==true">
+        {{equipment.description}}
+        <br><br>
+    </div>
+
+    <ion-list>
+      <ion-item *ngIf="equipment.quantity != null">
+          <span>Quantity
+            
+          </span> <span item-end>{{ equipment.quantity }}</span>
+      </ion-item>
+      <ion-item *ngIf="equipment.dicepool != null">
+          <span>Dicepool</span> <span item-end>{{ equipment.dicepool }}</span>
+      </ion-item> 
+      <ion-item *ngIf="equipment.gearcost.text != null">
+        <span>Cost</span> <span item-end>{{ equipment.gearcost.text }}</span>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

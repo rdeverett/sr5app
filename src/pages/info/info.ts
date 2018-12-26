@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CharacterService } from '../../app/characterService';
+import { CharacterService } from '../../providers/characterSerivce/characterService';
+import { DataProvider } from '../../providers/data/data';
 
 /**
  * Generated class for the InfoPage page.
@@ -13,14 +14,14 @@ import { CharacterService } from '../../app/characterService';
 @Component({
   selector: 'page-info',
   templateUrl: 'info.html',
-  providers: [CharacterService]
+  providers: [DataProvider]
 })
 export class InfoPage {
 
   public data = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private characterService: CharacterService) {
-    this.data = this.characterService.getCharacter();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
+    this.data = this.dataProvider.getCharacter();
   }
 
   ionViewDidLoad() {

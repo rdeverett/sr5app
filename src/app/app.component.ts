@@ -4,18 +4,19 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { CharacterService } from './characterService';
+import { CharacterService } from '../providers/characterSerivce/characterService';
+import { DataProvider } from '../providers/data/data';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [CharacterService]
+  providers: [DataProvider]
 })
 export class MyApp {
   rootPage:any = TabsPage;
 
   characterData = null;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, characterService: CharacterService) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, dataProvider: DataProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -23,6 +24,6 @@ export class MyApp {
       splashScreen.hide();
     });
 
-    this.characterData = characterService.getCharacter();
+    this.characterData = dataProvider.getCharacter();
   }
 }

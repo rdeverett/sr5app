@@ -7,12 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>equipment</ion-title>
+    <ion-title>{{ data.public.character.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <h2 style="text-align:center;" >Equipment</h2>
+  <ion-list>
+      <button ion-item *ngFor="let equipment of data.public.character.gear.equipment" (click)="openequipmentDetail(equipment)">
+        {{equipment.name}}
+      <!-- <span>{{weapon.name}}</span> <span item-end>{{skill.text}}</span> -->
+      </button>
+  </ion-list> 
 </ion-content>

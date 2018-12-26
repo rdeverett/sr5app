@@ -19,6 +19,9 @@ import { CyberneticsPage } from '../pages/cybernetics/cybernetics';
 import { BiowarePage } from '../pages/bioware/bioware';
 import { WeapondetailPage } from '../pages/weapondetail/weapondetail';
 import { CyberwareDetailPage } from '../pages/cyberware-detail/cyberware-detail';
+import { DataProvider } from '../providers/data/data';
+import { ArmordetailPage } from '../pages/armordetail/armordetail';
+import { EquipmentdetailPage } from '../pages/equipmentdetail/equipmentdetail';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { CyberwareDetailPage } from '../pages/cyberware-detail/cyberware-detail'
     CyberneticsPage,
     BiowarePage,
     WeapondetailPage,
-    CyberwareDetailPage
+    CyberwareDetailPage,
+    ArmordetailPage,
+    EquipmentdetailPage
   ],
   imports: [
     BrowserModule,
@@ -56,12 +61,15 @@ import { CyberwareDetailPage } from '../pages/cyberware-detail/cyberware-detail'
     CyberneticsPage,
     BiowarePage,
     WeapondetailPage,
-    CyberwareDetailPage
+    CyberwareDetailPage,
+    ArmordetailPage,
+    EquipmentdetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}

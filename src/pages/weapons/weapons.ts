@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CharacterService } from '../../app/characterService';
+import { CharacterService } from '../../providers/characterSerivce/characterService';
 import { WeapondetailPage } from '../weapondetail/weapondetail';
+import { DataProvider } from '../../providers/data/data';
 
 /**
  * Generated class for the WeaponsPage page.
@@ -14,14 +15,14 @@ import { WeapondetailPage } from '../weapondetail/weapondetail';
 @Component({
   selector: 'page-weapons',
   templateUrl: 'weapons.html',
-  providers: [CharacterService]
+  providers: [DataProvider]
 })
 export class WeaponsPage {
 
   public data = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private characterService: CharacterService) {
-    this.data = this.characterService.getCharacter();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
+    this.data = this.dataProvider.getCharacter();
   }
 
   openWeaponDetail(weapon){

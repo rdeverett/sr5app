@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataProvider } from '../../providers/data/data';
+import { EquipmentdetailPage } from '../equipmentdetail/equipmentdetail';
 
 /**
  * Generated class for the EquipmentPage page.
@@ -15,7 +17,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EquipmentPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data = null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
+    this.data = this.dataProvider.getCharacter();
+  }
+
+  openequipmentDetail(equipment){
+    console.log("Equipment selected:", equipment);
+    this.navCtrl.push(EquipmentdetailPage, {equipment: equipment});
   }
 
   ionViewDidLoad() {

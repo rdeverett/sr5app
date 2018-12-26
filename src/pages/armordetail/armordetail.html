@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ArmordetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{armor.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>   
+  <div *ngIf="armor.description.length > 350 && isShowMoreEnabled==false">
+      {{armor.shortDescription}}...
+      <button (click)="showMore()">Show More</button>
+      <br><br>
+  </div>        
+  <div *ngIf="armor.description.length <= 350||isShowMoreEnabled==true">
+      {{armor.description}}
+      <br><br>
+  </div>
+
+  <ion-list>
+      <ion-item *ngIf="armor.armorinfo.rating != null">
+          <span>Rating</span> <span item-end>{{ armor.armorinfo.rating }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.acid != null">
+          <span>Acid</span> <span item-end>{{ armor.armorinfo.acid }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.cold != null">
+          <span>Cold</span> <span item-end>{{ armor.armorinfo.cold }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.electricity != null">
+          <span>Electricity</span> <span item-end>{{ armor.armorinfo.electricity }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.falling != null">
+          <span>Falling</span> <span item-end>{{ armor.armorinfo.falling }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.fire != null">
+          <span>Fire</span> <span item-end>{{ armor.armorinfo.fire }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.radiation != null">
+        <span>Radiation</span> <span item-end>{{ armor.armorinfo.radiation }}</span>
+      </ion-item>
+      <ion-item *ngIf="armor.armorinfo.laser != ''">
+          <span>Laser</span> <span item-end>{{ armor.armorinfo.laser }}</span>
+      </ion-item>   
+      <ion-item *ngIf="armor.gearcost.text != ''">
+        <span>Cost</span> <span item-end>{{ armor.gearcost.text }}</span>
+      </ion-item> 
+  </ion-list> 
+
+
+</ion-content>
+
