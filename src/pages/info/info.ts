@@ -24,6 +24,10 @@ export class InfoPage {
     this.data = this.dataProvider.getCharacter();
   }
 
+  changePortait(){
+    
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
   }

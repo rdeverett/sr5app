@@ -22,8 +22,12 @@
 
     <ion-list>
 
-      <ion-img src="../assets/imgs/shadowrunhuman.jpg" alt="characterPortait" style="width: 200px; height: 250px; margin-left: auto; margin-right: auto; display: block;"></ion-img>
+      <ion-img src="../assets/imgs/humans/shadowrunHumanMaleBlackHair.jpg" alt="characterPortait" style="width: 200px; height: 250px; margin-left: auto; margin-right: auto; display: block;"></ion-img>
       <br>
+      <div style="text-align: center">
+        <button ion-button (click)="changePortrait()">Change Portrait</button>
+      </div>
+      
       <ion-item>
         <span>Race</span> <span item-end>{{ data.public.character.race.name }}</span>
       </ion-item>
