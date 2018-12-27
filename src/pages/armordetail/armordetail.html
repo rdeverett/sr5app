@@ -14,12 +14,12 @@
 
 
 <ion-content padding>   
-  <div *ngIf="armor.description.length > 350 && isShowMoreEnabled==false">
+  <div *ngIf="armor.description.length > MAX_DESCRIPTION_LENGTH && isShowMoreEnabled==false">
       {{armor.shortDescription}}...
       <button (click)="showMore()">Show More</button>
       <br><br>
   </div>        
-  <div *ngIf="armor.description.length <= 350||isShowMoreEnabled==true">
+  <div *ngIf="armor.description.length <= MAX_DESCRIPTION_LENGTH||isShowMoreEnabled==true">
       {{armor.description}}
       <br><br>
   </div>

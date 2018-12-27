@@ -22,6 +22,7 @@ import { CyberwareDetailPage } from '../pages/cyberware-detail/cyberware-detail'
 import { DataProvider } from '../providers/data/data';
 import { ArmordetailPage } from '../pages/armordetail/armordetail';
 import { EquipmentdetailPage } from '../pages/equipmentdetail/equipmentdetail';
+import { BiowareDetailPage } from '../pages/bioware-detail/bioware-detail';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { EquipmentdetailPage } from '../pages/equipmentdetail/equipmentdetail';
     EquipmentPage,
     CyberneticsPage,
     BiowarePage,
+    BiowareDetailPage,
     WeapondetailPage,
     CyberwareDetailPage,
     ArmordetailPage,
@@ -60,6 +62,7 @@ import { EquipmentdetailPage } from '../pages/equipmentdetail/equipmentdetail';
     EquipmentPage,
     CyberneticsPage,
     BiowarePage,
+    BiowareDetailPage,
     WeapondetailPage,
     CyberwareDetailPage,
     ArmordetailPage,

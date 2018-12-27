@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>biowareDetail</ion-title>
+    <ion-title>{{bioware.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding>   
+  <div *ngIf="bioware.description.length > MAX_DESCRIPTION_LENGTH && isShowMoreEnabled==false">
+      {{bioware.shortDescription}}...
+      <button (click)="showMore()">Show More</button>
+      <br><br>
+  </div>        
+  <div *ngIf="bioware.description.length <= MAX_DESCRIPTION_LENGTH||isShowMoreEnabled==true">
+      {{bioware.description}}
+      <br><br>
+  </div>
+
+  <ion-list>
+      <ion-item *ngIf="bioware.essencecost != null">
+          <span>Essence Cost</span> <span item-end>{{ bioware.essencecost }}</span>
+      </ion-item>
+      <ion-item *ngIf="bioware.rating != null">
+          <span>Acid</span> <span item-end>{{ bioware.rating }}</span>
+      </ion-item>
+      <ion-item *ngIf="bioware.gearcost.text != null">
+          <span>Cold</span> <span item-end>{{ bioware.gearcost.text }}</span>
+      </ion-item>
+  </ion-list> 
+
 
 </ion-content>

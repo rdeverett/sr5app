@@ -7,12 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>bioware</ion-title>
+    <ion-title>{{ data.public.character.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <h2 style="text-align:center;" >Bioware</h2>
+  <ion-list>
+      <button ion-item *ngFor="let bioware of data.public.character.gear.augmentations.bioware" (click)="openBiowareDetail(bioware)">
+        {{bioware.name}}
+      <!-- <span>{{weapon.name}}</span> <span item-end>{{skill.text}}</span> -->
+      </button>
+  </ion-list> 
 </ion-content>
