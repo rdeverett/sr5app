@@ -23,6 +23,8 @@ import { DataProvider } from '../providers/data/data';
 import { ArmordetailPage } from '../pages/armordetail/armordetail';
 import { EquipmentdetailPage } from '../pages/equipmentdetail/equipmentdetail';
 import { BiowareDetailPage } from '../pages/bioware-detail/bioware-detail';
+import { CharacterService } from '../providers/characterSerivce/characterService';
+import { CharacterPortraitSelectionPage } from '../pages/character-portrait-selection/character-portrait-selection';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { BiowareDetailPage } from '../pages/bioware-detail/bioware-detail';
     WeapondetailPage,
     CyberwareDetailPage,
     ArmordetailPage,
-    EquipmentdetailPage
+    EquipmentdetailPage,
+    CharacterPortraitSelectionPage
   ],
   imports: [
     BrowserModule,
@@ -66,13 +69,15 @@ import { BiowareDetailPage } from '../pages/bioware-detail/bioware-detail';
     WeapondetailPage,
     CyberwareDetailPage,
     ArmordetailPage,
-    EquipmentdetailPage
+    EquipmentdetailPage,
+    CharacterPortraitSelectionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    CharacterService
   ]
 })
 export class AppModule {}

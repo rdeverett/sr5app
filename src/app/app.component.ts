@@ -9,14 +9,15 @@ import { DataProvider } from '../providers/data/data';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [DataProvider]
+  providers: [DataProvider, CharacterService]
 })
 export class MyApp {
   rootPage:any = TabsPage;
 
-  characterData = null;
+  data = null;
+  character = null;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, dataProvider: DataProvider) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, dataProvider: DataProvider, characterService: CharacterService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -24,6 +25,8 @@ export class MyApp {
       splashScreen.hide();
     });
 
-    this.characterData = dataProvider.getCharacter();
+    this.data = dataProvider.getCharacter();
+    this.character = characterService.getCharacterPortrait();
+    
   }
 }

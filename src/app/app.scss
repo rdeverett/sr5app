@@ -18,3 +18,16 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+.mainImg{
+    width: 200px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.custom-popover{
+    $popover-md-width: 450px;
+    $popover-md-background: black;	
+}
