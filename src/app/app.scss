@@ -20,14 +20,30 @@
 }
 
 .mainImg{
-    width: 200px;
-    height: 250px;
+    width: 170px;
+    height: 220px;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    border: solid;
+    border-width: 2px;
 }
 
-.custom-popover{
-    $popover-md-width: 450px;
-    $popover-md-background: black;	
+.custom-popover .popover-content{
+    width: auto;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    text-align: center;
+    border: double;
+    border-width: 5px;
+}
+
+.imgSelection{
+    width: 180px;
+    height: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }

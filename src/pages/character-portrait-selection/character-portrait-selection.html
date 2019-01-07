@@ -6,125 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Choose your character</ion-title>
-  </ion-navbar>
+  <!-- <ion-navbar>
+    <ion-title style="text-align: center;">Choose your character</ion-title>
+  </ion-navbar> -->
 
 </ion-header>
 
 
 <ion-content padding>
   <ion-grid>
-    <ion-row>
+    <ion-row  *ngFor="let characterPortrait of character;">
       <ion-col>
-        <!--Ork Female Portraits-->
-          <button (click)="changeCharacterPortrait()">
-            <img src="{{character.characterPortrait.shadowrunOrkFemaleRedShortHair}}">
-          </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunOrkFemaleBurnetteHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunOrkFemaleShortBlondeHair}}">
-        </button>
-      </ion-col>
-    </ion-row>
-
-    <!--Ork Male Portraits-->
-    <ion-row>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunOrkMaleBlackBraidedHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunOrkMaleShortBlackHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunOrkMaleShortBlondeHair}}">
-        </button>
-      </ion-col>
-    </ion-row>
-
-    <!--Human Female Portraits-->
-    <ion-row>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunHumanBlackShortHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunHumanFemaleBurnetteHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunHumanFemaleLongBlondeHair}}">
-        </button>
-      </ion-col>
-    </ion-row>
-
-    <!--Human Male Portraits-->
-    <ion-row>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunHumanMaleBlackHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunHumanMaleBlondeHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunHumanMaleShavedHair}}">
-        </button>
-      </ion-col>
-    </ion-row>
-
-    <!--Elf Female Portraits-->
-    <ion-row>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunElfFemaleBlondeShortHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunElfFemaleBurnetteHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunElfFemaleGreenShortHair}}">
-        </button>
-      </ion-col>
-    </ion-row>
-
-    <!--Elf Male Portraits-->
-    <ion-row>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunElfMaleBlackLongHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunElfMaleLongBurnetteHair}}">
-        </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="changeCharacterPortrait()">
-          <img src="{{character.characterPortrait.shadowrunElfMaleShortWhiteHair}}">
+        <button (click)="makeMainPortrait()">
+          <ion-img src= {{characterPortrait}} alt="characterPortait" class="imgSelection"></ion-img>
         </button>
       </ion-col>
     </ion-row>

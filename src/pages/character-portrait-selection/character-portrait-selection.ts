@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DataProvider } from '../../providers/data/data';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { CharacterService } from '../../providers/characterSerivce/characterService';
 
 /**
@@ -14,15 +13,35 @@ import { CharacterService } from '../../providers/characterSerivce/characterServ
 @Component({
   selector: 'page-character-portrait-selection',
   templateUrl: 'character-portrait-selection.html',
-  providers: [DataProvider, CharacterService]
+  providers: [CharacterService]
 })
 export class CharacterPortraitSelectionPage {
 
-  public character = null;
-  public characterPortait = null;
+  public character = [];
+  public characterPortrait = null;
+  public currentCharacterPortrait = null;
+  public i = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, private characterService: CharacterService) {
-    this.character = this.characterService.getCharacterPortrait();
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private characterService: CharacterService) {
+    //Acquires the whole array of character portraits
+
+    this.character = this.characterService.getCharacterPortrait(); 
+
+    for(let i = 0; i < this.character.length; i++)
+    {
+      this.i++;
+      console.log(this.character[i]);
+    }
+    //Passes through currentCharacterPortrait from info.ts
+    this.currentCharacterPortrait = this.navParams.get('currentCharacterPortrait');
+  }
+
+  makeMainPortrait(){    
+    this.close();
+  }
+
+  close(){
+    this.viewCtrl.dismiss();
   }
 
   ionViewDidLoad() {

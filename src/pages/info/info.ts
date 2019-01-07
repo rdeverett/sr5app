@@ -20,17 +20,19 @@ import { CharacterPortraitSelectionPage } from '../character-portrait-selection/
 export class InfoPage {
 
   public data = null;
-  public character = null;
-  public showingCharacter = null;
+  public character = [];
+  public currentCharacterPortrait = null;
+  public i = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, private characterService: CharacterService, public popoverControl: PopoverController) {
     this.data = this.dataProvider.getCharacter();
     this.character = this.characterService.getCharacterPortrait();
-    this.showingCharacter = this.character.characterPortrait.shadowrunOrkMaleShortBlackHair;
+    this.currentCharacterPortrait = this.character[this.i];
+    console.log(this.currentCharacterPortrait);
   }
 
-  changePortrait(myEvent){
-    const popover = this.popoverControl.create(CharacterPortraitSelectionPage);
+  changePortrait(){  
+    const popover = this.popoverControl.create(CharacterPortraitSelectionPage, {currentCharacterPortrait:this.currentCharacterPortrait}, {cssClass: 'custom-popover'});
     popover.present();
   }
 
