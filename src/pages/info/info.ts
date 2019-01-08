@@ -17,27 +17,36 @@ import { CharacterPortraitSelectionPage } from '../character-portrait-selection/
   templateUrl: 'info.html',
   providers: [DataProvider, CharacterService]
 })
-export class InfoPage {
+export class InfoPage{
 
+  public index;
   public data = null;
-  public character = [];
+  public characterPortraits = [];
   public currentCharacterPortrait = null;
-  public i = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, private characterService: CharacterService, public popoverControl: PopoverController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
+    //Character Data
     this.data = this.dataProvider.getCharacter();
-    this.character = this.characterService.getCharacterPortrait();
-    this.currentCharacterPortrait = this.character[this.i];
-    console.log(this.currentCharacterPortrait);
+    //Gets array of character portraits
+    this.characterPortraits = this.dataProvider.getCharacterPortraits();
+    this.index = this.dataProvider.selectedCharacterPortraitIndex;
+    this.currentCharacterPortrait = this.characterPortraits[this.index];
   }
 
-  changePortrait(){  
-    const popover = this.popoverControl.create(CharacterPortraitSelectionPage, {currentCharacterPortrait:this.currentCharacterPortrait}, {cssClass: 'custom-popover'});
-    popover.present();
+  ionViewWillEnter(){
+    this.index = this.dataProvider.selectedCharacterPortraitIndex; 
+    console.log(this.index);
+  }
+
+  openCharacterPortraitSelectionPage(){  
+    this.navCtrl.push(CharacterPortraitSelectionPage);
+    // const popover = this.popoverControl.create(CharacterPortraitSelectionPage, {currentCharacterPortrait:this.currentCharacterPortrait}, {cssClass: 'custom-popover'});
+    // popover.present();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
   }
 
+  
 }

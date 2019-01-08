@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Events } from "ionic-angular"; 
 import { CharacterService } from '../../providers/characterSerivce/characterService';
+import { DataProvider } from '../../providers/data/data';
+import { InfoPage } from '../info/info';
 
 /**
  * Generated class for the CharacterPortraitSelectionPage page.
@@ -13,43 +16,26 @@ import { CharacterService } from '../../providers/characterSerivce/characterServ
 @Component({
   selector: 'page-character-portrait-selection',
   templateUrl: 'character-portrait-selection.html',
-  providers: [CharacterService]
+  providers: [DataProvider]
 })
 export class CharacterPortraitSelectionPage {
 
-  public character = [];
-  public characterPortrait = null;
+  public characterPortraits = [];
   public currentCharacterPortrait = null;
-  public i = 0;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private characterService: CharacterService) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private dataProvider: DataProvider, public event: Events) {
     //Acquires the whole array of character portraits
-
-    this.character = this.characterService.getCharacterPortrait(); 
-
-    for(let i = 0; i < this.character.length; i++)
-    {
-      this.i++;
-      console.log(this.character[i]);
-    }
-    //Passes through currentCharacterPortrait from info.ts
-    this.currentCharacterPortrait = this.navParams.get('currentCharacterPortrait');
+    this.characterPortraits = this.dataProvider.getCharacterPortraits();
   }
 
-  makeMainPortrait(){    
-    this.close();
-  }
-
-  close(){
-    this.viewCtrl.dismiss();
+  changeCharacterPortrait(index){ 
+    this.dataProvider.selectedCharacterPortraitIndex = index;
+    console.log(this.dataProvider.selectedCharacterPortraitIndex);
+    this.navCtrl.pop();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharacterPortraitSelectionPage');
-  }
-
-  changeCharacterPortrait(){
-    
   }
 
 }

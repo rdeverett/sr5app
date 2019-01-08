@@ -18,33 +18,29 @@
 
 <ion-content padding>
 
-    <h2 style="text-align:center;">{{ data.public.character.name }}</h2>
-
-    <ion-list>
-
-      <ion-img src= {{currentCharacterPortrait}} alt="characterPortait" class="mainImg"></ion-img>
-      <br>
-      <div style="text-align: center">
-        <button ion-button (click)="changePortrait($event)">Change Portrait</button>
-      </div>
-      
-      <ion-item>
-        <span>Race</span> <span item-end>{{ data.public.character.race.name }}</span>
-      </ion-item>
-      <ion-item>
-        <span>Gender</span> <span item-end>{{ data.public.character.personal.gender }}</span>
-      </ion-item>
-      <ion-item>
-        <span>Age</span> <span item-end>{{ data.public.character.personal.age }}</span>
-      </ion-item>
-      <ion-item>
-        <span>Height</span> <span item-end>{{ data.public.character.personal.charheight.text }}</span>
-      </ion-item>
-      <ion-item>
-        <span>Weight</span> <span item-end>{{ data.public.character.personal.charweight.text }}</span>
-      </ion-item>
-      </ion-list> 
-
-  
-
+    <h2 style="text-align: center; font-size: xx-large;">{{ data.public.character.name }}</h2>
+    
+      <ion-card style="border: double; border-width: 8px;"> 
+        <img (click)="openCharacterPortraitSelectionPage()" src= {{currentCharacterPortrait}} alt="characterPortait"/>
+        <!-- <div style="text-align: center">
+            <button ion-button (click)="openCharacterPortraitSelectionPage()">Change Portrait</button>
+          </div> -->
+          <ion-list>
+              <ion-item>
+                  <span>Race</span> <span item-end>{{ data.public.character.race.name }}</span>
+                </ion-item>
+                <ion-item>
+                  <span>Gender</span> <span item-end>{{ data.public.character.personal.gender }}</span>
+                </ion-item>
+                <ion-item>
+                  <span>Age</span> <span item-end>{{ data.public.character.personal.age }}</span>
+                </ion-item>
+                <ion-item>
+                  <span>Height</span> <span item-end>{{ data.public.character.personal.charheight.text }}</span>
+                </ion-item>
+                <ion-item>
+                  <span>Weight</span> <span item-end>{{ data.public.character.personal.charweight.text }}</span>
+                </ion-item>
+          </ion-list>
+      </ion-card>
 </ion-content>

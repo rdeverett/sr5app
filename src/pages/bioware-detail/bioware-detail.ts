@@ -24,7 +24,7 @@ export class BiowareDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
     this.bioware = navParams.get("bioware"); 
 
-    this.MAX_DESCRIPTION_LENGTH = dataProvider.MAX_DESCRIPTION_LENGTH;
+    this.MAX_DESCRIPTION_LENGTH = this.dataProvider.MAX_DESCRIPTION_LENGTH;
 
     this.bioware.shortDescription = this.bioware.description;
     if(this.bioware.description.length>this.MAX_DESCRIPTION_LENGTH){

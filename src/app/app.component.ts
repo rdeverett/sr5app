@@ -15,7 +15,6 @@ export class MyApp {
   rootPage:any = TabsPage;
 
   data = null;
-  character = null;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, dataProvider: DataProvider, characterService: CharacterService) {
     platform.ready().then(() => {
@@ -25,8 +24,6 @@ export class MyApp {
       splashScreen.hide();
     });
 
-    this.data = dataProvider.getCharacter();
-    this.character = characterService.getCharacterPortrait();
-    
+    this.data = dataProvider.getCharacter();    
   }
 }

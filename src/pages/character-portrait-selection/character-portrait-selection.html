@@ -6,21 +6,21 @@
 -->
 <ion-header>
 
-  <!-- <ion-navbar>
+  <ion-navbar style="font-size: small;">
     <ion-title style="text-align: center;">Choose your character</ion-title>
-  </ion-navbar> -->
+  </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-grid>
-    <ion-row  *ngFor="let characterPortrait of character;">
-      <ion-col>
-        <button (click)="makeMainPortrait()">
-          <ion-img src= {{characterPortrait}} alt="characterPortait" class="imgSelection"></ion-img>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content>
+  <ion-card style="border: solid;" *ngFor="let characterPortraits of characterPortraits; index as i">
+      <img (click)="changeCharacterPortrait(i)" src= {{characterPortraits}} alt="characterPortait"/>
+  </ion-card>
+
+  <!-- <div style="overflow: scroll" *ngFor="let characterPortraits of characterPortraits; index as i">
+    <button (click)="makeMainPortrait(i)">
+      <ion-img src= {{characterPortraits}} alt="characterPortait" class="imgSelection"></ion-img>
+    </button>
+  </div> -->
 </ion-content>
