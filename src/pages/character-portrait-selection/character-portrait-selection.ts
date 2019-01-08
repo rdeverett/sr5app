@@ -28,9 +28,8 @@ export class CharacterPortraitSelectionPage {
     this.characterPortraits = this.dataProvider.getCharacterPortraits();
   }
 
-  changeCharacterPortrait(index){ 
-    this.dataProvider.selectedCharacterPortraitIndex = index;
-    console.log(this.dataProvider.selectedCharacterPortraitIndex);
+  changeCharacterPortrait(characterPortraitIndex){ 
+    this.event.publish('characterPortraitIndex', characterPortraitIndex);
     this.navCtrl.pop();
   }
 

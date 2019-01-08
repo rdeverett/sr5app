@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { Events } from 'ionic-angular'
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { CharacterService } from '../../providers/characterSerivce/characterService';
 import { DataProvider } from '../../providers/data/data';
 import { CharacterPortraitSelectionPage } from '../character-portrait-selection/character-portrait-selection';
@@ -19,29 +20,28 @@ import { CharacterPortraitSelectionPage } from '../character-portrait-selection/
 })
 export class InfoPage{
 
-  public index;
   public data = null;
   public characterPortraits = [];
   public currentCharacterPortrait = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, public event: Events) {
     //Character Data
     this.data = this.dataProvider.getCharacter();
+
     //Gets array of character portraits
     this.characterPortraits = this.dataProvider.getCharacterPortraits();
-    this.index = this.dataProvider.selectedCharacterPortraitIndex;
-    this.currentCharacterPortrait = this.characterPortraits[this.index];
-  }
 
-  ionViewWillEnter(){
-    this.index = this.dataProvider.selectedCharacterPortraitIndex; 
-    console.log(this.index);
+    //Sets characterPortrait based off of index
+    this.currentCharacterPortrait = this.characterPortraits[0];
+
+    //Grabs characterPortraitIndex from CharacterPortraitSelectionPage.ts
+    this.event.subscribe('characterPortraitIndex', characterPortraitIndex=>{
+      this.currentCharacterPortrait = this.characterPortraits[characterPortraitIndex];
+    })
   }
 
   openCharacterPortraitSelectionPage(){  
     this.navCtrl.push(CharacterPortraitSelectionPage);
-    // const popover = this.popoverControl.create(CharacterPortraitSelectionPage, {currentCharacterPortrait:this.currentCharacterPortrait}, {cssClass: 'custom-popover'});
-    // popover.present();
   }
 
   ionViewDidLoad() {

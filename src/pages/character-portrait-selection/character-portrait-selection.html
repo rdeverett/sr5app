@@ -14,7 +14,7 @@
 
 
 <ion-content>
-  <ion-card style="border: solid;" *ngFor="let characterPortraits of characterPortraits; index as i">
+  <ion-card style="border: solid; border-radius: 25px;" *ngFor="let characterPortraits of characterPortraits; index as i">
       <img (click)="changeCharacterPortrait(i)" src= {{characterPortraits}} alt="characterPortait"/>
   </ion-card>
 

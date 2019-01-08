@@ -3,24 +3,13 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title style="text-align: center; font-size: x-large;">
-      SHADOWRUN 5
-      <!-- <img src="../assets/imgs/shadowruntitle.jpg" alt="title" style="width: 225px; height: 40git px; margin-left: auto; margin-right: auto; display: block;"> -->
-    </ion-title>
-    <!-- <ion-title>{{ data.public.character.name }}</ion-title> -->
-  </ion-navbar> 
-
-</ion-header> 
+--> 
 
 <ion-content padding>
 
     <h2 style="text-align: center; font-size: xx-large;">{{ data.public.character.name }}</h2>
     
-      <ion-card style="border: double; border-width: 8px;"> 
+      <ion-card style="border: double; border-width: 8px; border-radius: 25px;"> 
         <img (click)="openCharacterPortraitSelectionPage()" src= {{currentCharacterPortrait}} alt="characterPortait"/>
         <!-- <div style="text-align: center">
             <button ion-button (click)="openCharacterPortraitSelectionPage()">Change Portrait</button>

@@ -5,8 +5,6 @@ export class DataProvider {
 
   public MAX_DESCRIPTION_LENGTH = 350;  
 
-  public selectedCharacterPortraitIndex = 5;
-
   private characterPortraits = ['../assets/imgs/elves/shadowrunElfFemaleBlondeShortHair.jpg', '../assets/imgs/elves/shadowrunElfFemaleBurnetteHair.jpg',
   "../assets/imgs/elves/shadowrunElfFemaleGreenShortHair.jpg", "../assets/imgs/elves/shadowrunElfMaleBlackLongHair.jpg",
   "../assets/imgs/elves/shadowrunElfMaleLongBurnetteHair.jpg", "../assets/imgs/elves/shadowrunElfMaleShortWhiteHair.jpg",
