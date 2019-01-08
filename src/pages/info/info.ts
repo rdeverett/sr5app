@@ -16,7 +16,7 @@ import { CharacterPortraitSelectionPage } from '../character-portrait-selection/
 @Component({
   selector: 'page-info',
   templateUrl: 'info.html',
-  providers: [DataProvider, CharacterService]
+  providers: [DataProvider]
 })
 export class InfoPage{
 

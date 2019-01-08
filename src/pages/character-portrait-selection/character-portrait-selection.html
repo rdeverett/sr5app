@@ -14,9 +14,15 @@
 
 
 <ion-content>
-  <ion-card style="border: solid; border-radius: 25px;" *ngFor="let characterPortraits of characterPortraits; index as i">
-      <img (click)="changeCharacterPortrait(i)" src= {{characterPortraits}} alt="characterPortait"/>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let characterPortraits of characterPortraits; index as i">
+        <ion-card style="border: solid; border-radius: 25px;">
+            <img (click)="changeCharacterPortrait(i)" src= {{characterPortraits}} alt="characterPortait"/>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <!-- <div style="overflow: scroll" *ngFor="let characterPortraits of characterPortraits; index as i">
     <button (click)="makeMainPortrait(i)">

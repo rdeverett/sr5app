@@ -5,6 +5,10 @@ export class DataProvider {
 
   public MAX_DESCRIPTION_LENGTH = 350;  
 
+  private physicalDamage = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+
+  private stunDamage = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
   private characterPortraits = ['../assets/imgs/elves/shadowrunElfFemaleBlondeShortHair.jpg', '../assets/imgs/elves/shadowrunElfFemaleBurnetteHair.jpg',
   "../assets/imgs/elves/shadowrunElfFemaleGreenShortHair.jpg", "../assets/imgs/elves/shadowrunElfMaleBlackLongHair.jpg",
   "../assets/imgs/elves/shadowrunElfMaleLongBurnetteHair.jpg", "../assets/imgs/elves/shadowrunElfMaleShortWhiteHair.jpg",
@@ -2969,4 +2973,12 @@ export class DataProvider {
  getCharacterPortraits(){
    return this.characterPortraits;
 }
+
+ getPhysicalDamageTrack(){
+    return this.physicalDamage;
+ }
+
+ getStunDamageTrack(){
+   return this.stunDamage;
+ }
 }

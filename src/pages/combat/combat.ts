@@ -17,9 +17,19 @@ import { DataProvider } from '../../providers/data/data';
 export class CombatPage {
 
   public data = null;
+  public physicalDamageTrack = [];
+  public stunDamageTrack = [];
+  public hasBeenClicked = false;
+  public backgroundColor;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
     this.data = this.dataProvider.getCharacter();
+    this.physicalDamageTrack = this.dataProvider.getPhysicalDamageTrack();
+    this.stunDamageTrack = this.dataProvider.getStunDamageTrack();
+  }
+
+  toggleSquareBackground(index){ 
+    console.log(index);
   }
 
   ionViewDidLoad() {

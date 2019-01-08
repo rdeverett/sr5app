@@ -14,5 +14,25 @@
 
 
 <ion-content padding>
-  <h2 style="text-align: center">Health</h2>
+  <h2 style="text-align:center">Equipped Equipment</h2>
+
+  <h2 style="text-align: center">Physical Damage Track</h2>
+  <ion-grid>
+    <ion-row style="border:solid;">
+      <ion-col col-4 style="border:solid;" *ngFor="let physicalDamageTrack of physicalDamageTrack; index as i" (click)="toggleSquareBackground(i)">
+          {{physicalDamageTrack}}
+          <br><br><br>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <h2 style="text-align: center">Stun Damage Track</h2>
+  <ion-grid>
+    <ion-row style="border:solid;">
+      <ion-col col-4 style="border:solid;" *ngFor="let stunDamageTrack of stunDamageTrack; index as i" (click)="toggleSquareBackground(i)">
+          {{stunDamageTrack}}
+          <br><br><br>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
