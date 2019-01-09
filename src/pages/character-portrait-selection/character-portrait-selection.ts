@@ -30,6 +30,7 @@ export class CharacterPortraitSelectionPage {
 
   changeCharacterPortrait(characterPortraitIndex){ 
     this.event.publish('characterPortraitIndex', characterPortraitIndex);
+    this.dataProvider.characterPortraitIndex = characterPortraitIndex;
     this.navCtrl.pop();
   }
 

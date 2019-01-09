@@ -17,8 +17,8 @@ import { DataProvider } from '../../providers/data/data';
 export class CombatPage {
 
   public data = null;
-  public physicalDamageTrack = [];
-  public stunDamageTrack = [];
+  public physicalDamageTrack = null;
+  public stunDamageTrack = null;
   public hasBeenClicked = false;
   public backgroundColor;
 
@@ -29,11 +29,14 @@ export class CombatPage {
   }
 
   toggleSquareBackground(index){ 
+    
+
     console.log(index);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CombatPage');
+    console.log(this.dataProvider.getPhysicalDamageTrack());
   }
 
 }

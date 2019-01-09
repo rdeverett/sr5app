@@ -37,11 +37,16 @@ export class InfoPage{
     //Grabs characterPortraitIndex from CharacterPortraitSelectionPage.ts
     this.event.subscribe('characterPortraitIndex', characterPortraitIndex=>{
       this.currentCharacterPortrait = this.characterPortraits[characterPortraitIndex];
+      this.dataProvider.characterPortraitIndex = characterPortraitIndex;
     })
   }
 
   openCharacterPortraitSelectionPage(){  
     this.navCtrl.push(CharacterPortraitSelectionPage);
+  }
+
+  ionViewDidEnter(){
+    console.log(this.dataProvider.characterPortraitIndex);
   }
 
   ionViewDidLoad() {

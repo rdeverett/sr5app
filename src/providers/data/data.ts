@@ -5,9 +5,143 @@ export class DataProvider {
 
   public MAX_DESCRIPTION_LENGTH = 350;  
 
-  private physicalDamage = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+  public characterPortraitIndex = 0;
 
-  private stunDamage = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  private physicalDamage = 
+  {
+   "number":{
+      "1":
+      {
+         "status": ["disabled",
+            "enabled"]
+      },
+      "2":
+      {
+         "status": ["disabled",
+            "enabled"]
+      },
+      "3":
+      {
+         "status": ["disabled",
+            "enabled"]
+      },
+      "4":
+      {
+         "status": ["disabled",
+            "enabled"]
+      },
+      "5":
+      {
+         "status": "disabled",
+      },
+      "6":
+      {
+         "status": "disabled",
+      },
+      "7":
+      {
+         "status": "disabled",
+      },
+      "8":
+      {
+         "status": "disabled",
+      },
+      "9":
+      {
+         "status": "disabled",
+      },
+      "10":
+      {
+         "status": "disabled",
+      },
+      "11":
+      {
+         "status": "disabled",
+      },
+      "12":
+      {
+         "status": "disabled",
+      },
+      "13":
+      {
+         "status": "disabled",
+      },
+      "14":
+      {
+         "status": "disabled",
+      },
+      "15":
+      {
+         "status": "disabled",
+      },
+      "16":
+      {
+         "status": "disabled",
+      },
+      "17":
+      {
+         "status": "disabled",
+      },
+      "18":
+      {
+         "status": "disabled",
+      }
+   }
+  }
+
+  private stunDamage = 
+  {
+     "number":{
+     "1":
+     {
+        "status": "disabled",
+     },
+     "2":
+     {
+        "status": "disabled",
+     },
+     "3":
+     {
+        "status": "disabled",
+     },
+     "4":
+     {
+        "status": "disabled",
+     },
+     "5":
+     {
+        "status": "disabled",
+     },
+     "6":
+     {
+        "status": "disabled",
+     },
+     "7":
+     {
+        "status": "disabled",
+     },
+     "8":
+     {
+        "status": "disabled",
+     },
+     "9":
+     {
+        "status": "disabled",
+     },
+     "10":
+     {
+        "status": "disabled",
+     },
+     "11":
+     {
+        "status": "disabled",
+     },
+     "12":
+     {
+        "status": "disabled",
+     }
+   }
+  }
 
   private characterPortraits = ['../assets/imgs/elves/shadowrunElfFemaleBlondeShortHair.jpg', '../assets/imgs/elves/shadowrunElfFemaleBurnetteHair.jpg',
   "../assets/imgs/elves/shadowrunElfFemaleGreenShortHair.jpg", "../assets/imgs/elves/shadowrunElfMaleBlackLongHair.jpg",

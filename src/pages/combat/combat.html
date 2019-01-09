@@ -16,11 +16,15 @@
 <ion-content padding>
   <h2 style="text-align:center">Equipped Equipment</h2>
 
+  <p *ngFor="let physicalDamageTrack of physicalDamageTrack.number">
+    {{physicalDamageTrack}}
+  </p>
+
   <h2 style="text-align: center">Physical Damage Track</h2>
   <ion-grid>
     <ion-row style="border:solid;">
-      <ion-col col-4 style="border:solid;" *ngFor="let physicalDamageTrack of physicalDamageTrack; index as i" (click)="toggleSquareBackground(i)">
-          {{physicalDamageTrack}}
+      <ion-col col-4 style="border:solid;" *ngFor="let physicalDamageTrack of physicalDamageTrack; index as index;" (click)="toggleSquareBackground(index)">
+          {{physicalDamageTrack.number}}
           <br><br><br>
       </ion-col>
     </ion-row>
@@ -29,8 +33,8 @@
   <h2 style="text-align: center">Stun Damage Track</h2>
   <ion-grid>
     <ion-row style="border:solid;">
-      <ion-col col-4 style="border:solid;" *ngFor="let stunDamageTrack of stunDamageTrack; index as i" (click)="toggleSquareBackground(i)">
-          {{stunDamageTrack}}
+      <ion-col col-4 style="border:solid;" *ngFor="let stunDamageTrack of stunDamageTrack; index as index;" (click)="toggleSquareBackground(index)">
+          {{stunDamageTrack.number}}
           <br><br><br>
       </ion-col>
     </ion-row>
