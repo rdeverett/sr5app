@@ -7,142 +7,137 @@ export class DataProvider {
 
   public characterPortraitIndex = 0;
 
-  private physicalDamage = 
+  private physicalDamageTrack = 
   {
-   "number":{
-      "1":
-      {
-         "status": ["disabled",
-            "enabled"]
-      },
-      "2":
-      {
-         "status": ["disabled",
-            "enabled"]
-      },
-      "3":
-      {
-         "status": ["disabled",
-            "enabled"]
-      },
-      "4":
-      {
-         "status": ["disabled",
-            "enabled"]
-      },
-      "5":
-      {
-         "status": "disabled",
-      },
-      "6":
-      {
-         "status": "disabled",
-      },
-      "7":
-      {
-         "status": "disabled",
-      },
-      "8":
-      {
-         "status": "disabled",
-      },
-      "9":
-      {
-         "status": "disabled",
-      },
-      "10":
-      {
-         "status": "disabled",
-      },
-      "11":
-      {
-         "status": "disabled",
-      },
-      "12":
-      {
-         "status": "disabled",
-      },
-      "13":
-      {
-         "status": "disabled",
-      },
-      "14":
-      {
-         "status": "disabled",
-      },
-      "15":
-      {
-         "status": "disabled",
-      },
-      "16":
-      {
-         "status": "disabled",
-      },
-      "17":
-      {
-         "status": "disabled",
-      },
-      "18":
-      {
-         "status": "disabled",
-      }
-   }
+     "number":[
+        {
+           "value": "1",
+           "status": ["enabled", "disabled"]
+         },
+         {
+            "value": "2",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "3",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "4",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "5",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "6",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "7",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "8",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "9",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "10",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "11",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "12",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "13",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "14",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "15",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "16",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "17",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "18",
+            "status": ["enabled", "disabled"]
+          }]
   }
 
-  private stunDamage = 
+  private stunDamageTrack = 
   {
-     "number":{
-     "1":
-     {
-        "status": "disabled",
-     },
-     "2":
-     {
-        "status": "disabled",
-     },
-     "3":
-     {
-        "status": "disabled",
-     },
-     "4":
-     {
-        "status": "disabled",
-     },
-     "5":
-     {
-        "status": "disabled",
-     },
-     "6":
-     {
-        "status": "disabled",
-     },
-     "7":
-     {
-        "status": "disabled",
-     },
-     "8":
-     {
-        "status": "disabled",
-     },
-     "9":
-     {
-        "status": "disabled",
-     },
-     "10":
-     {
-        "status": "disabled",
-     },
-     "11":
-     {
-        "status": "disabled",
-     },
-     "12":
-     {
-        "status": "disabled",
-     }
-   }
+     "number":[
+        {
+           "value": "1",
+           "status": ["enabled", "disabled"]
+         },
+         {
+            "value": "2",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "3",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "4",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "5",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "6",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "7",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "8",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "9",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "10",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "11",
+            "status": ["enabled", "disabled"]
+          },
+          {
+            "value": "12",
+            "status": ["enabled", "disabled"]
+          }]
   }
-
+  
+  
   private characterPortraits = ['../assets/imgs/elves/shadowrunElfFemaleBlondeShortHair.jpg', '../assets/imgs/elves/shadowrunElfFemaleBurnetteHair.jpg',
   "../assets/imgs/elves/shadowrunElfFemaleGreenShortHair.jpg", "../assets/imgs/elves/shadowrunElfMaleBlackLongHair.jpg",
   "../assets/imgs/elves/shadowrunElfMaleLongBurnetteHair.jpg", "../assets/imgs/elves/shadowrunElfMaleShortWhiteHair.jpg",
@@ -3109,10 +3104,10 @@ export class DataProvider {
 }
 
  getPhysicalDamageTrack(){
-    return this.physicalDamage;
+    return this.physicalDamageTrack;
  }
 
  getStunDamageTrack(){
-   return this.stunDamage;
+   return this.stunDamageTrack;
  }
 }

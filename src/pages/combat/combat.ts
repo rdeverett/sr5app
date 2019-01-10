@@ -36,6 +36,7 @@ export class CombatPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CombatPage');
+    console.log(this.dataProvider.getStunDamageTrack());
     console.log(this.dataProvider.getPhysicalDamageTrack());
   }
 
