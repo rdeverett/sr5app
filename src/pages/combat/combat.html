@@ -14,24 +14,25 @@
 
 
 <ion-content padding>
-  <h2 style="text-align:center">Equipped Equipment</h2>
-
-  <h2 style="text-align: center">Physical Damage Track</h2>
+  <h2 style="text-align: center" (click)="toggleGrid(physicalDamageTrack)">Physical Damage Track</h2>
   <ion-grid>
-    <ion-row style="border:solid;">
-      <ion-col col-4 style="border:solid;" *ngFor="let physicalDamageTrack of physicalDamageTrack.number; index as index;" (click)="toggleSquareBackground(index)">
-          {{physicalDamageTrack.value}}
-          <br><br><br>
+    <ion-row style="border:solid 1px;">
+      <ion-col col-4 style="border:solid 1px;"
+        *ngFor="let physicalDamageTrack of physicalDamageTrack.number; index as index;"
+        (click)="togglePhysicalDamage(index)" [ngClass]="getBackgroundClass(physicalDamageTrack.status)">
+        {{physicalDamageTrack.value}}
+        <br><br><br>
       </ion-col>
     </ion-row>
   </ion-grid>
   <br>
-  <h2 style="text-align: center">Stun Damage Track</h2>
+  <h2 style="text-align: center" (click)="toggleGrid(stunDamageTrack)">Stun Damage Track</h2>
   <ion-grid>
-    <ion-row style="border:solid;">
-      <ion-col col-4 style="border:solid;" *ngFor="let stunDamageTrack of stunDamageTrack.number; index as index;" (click)="toggleSquareBackground(index)">
-          {{stunDamageTrack.value}}
-          <br><br><br>
+    <ion-row style="border: solid 1px;">
+      <ion-col col-4 style="border: solid 1px;" *ngFor="let stunDamageTrack of stunDamageTrack.number; index as index;"
+        (click)="toggleStunDamage(index)" [ngClass]="getBackgroundClass(stunDamageTrack.status)">
+        {{stunDamageTrack.value}}
+        <br><br><br>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -1,4 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicStorageModule } from '@ionic/storage'
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -34,7 +35,7 @@ import { CharacterPortraitSelectionPage } from '../pages/character-portrait-sele
     AttributesPage,
     SkillsPage,
     GearPage,
-    CombatPage,    
+    CombatPage,
     TabsPage,
     WeaponsPage,
     ArmorPage,
@@ -51,7 +52,8 @@ import { CharacterPortraitSelectionPage } from '../pages/character-portrait-sele
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FormsModule
+    FormsModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,7 +62,7 @@ import { CharacterPortraitSelectionPage } from '../pages/character-portrait-sele
     AttributesPage,
     SkillsPage,
     GearPage,
-    CombatPage,    
+    CombatPage,
     TabsPage,
     WeaponsPage,
     ArmorPage,
@@ -77,9 +79,9 @@ import { CharacterPortraitSelectionPage } from '../pages/character-portrait-sele
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     DataProvider,
     CharacterService
   ]
 })
-export class AppModule {}
+export class AppModule { }

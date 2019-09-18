@@ -1,7 +1,7 @@
-.damageTracker{
-    background: white;
+.disabled {
+  background: white;
 }
 
-.damageTracker:hover{
-    background: gray;
+.enabled {
+  background-color: color($colors, primary);
 }

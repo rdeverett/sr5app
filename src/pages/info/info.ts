@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage'
 import { Events } from 'ionic-angular'
-import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CharacterService } from '../../providers/characterSerivce/characterService';
 import { DataProvider } from '../../providers/data/data';
 import { CharacterPortraitSelectionPage } from '../character-portrait-selection/character-portrait-selection';
@@ -18,40 +19,39 @@ import { CharacterPortraitSelectionPage } from '../character-portrait-selection/
   templateUrl: 'info.html',
   providers: [DataProvider]
 })
-export class InfoPage{
+export class InfoPage {
 
   public data = null;
   public characterPortraits = [];
   public currentCharacterPortrait = null;
+  public characterPortaitIndex;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, public event: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, public event: Events, public storage: Storage) {
     //Character Data
     this.data = this.dataProvider.getCharacter();
 
     //Gets array of character portraits
     this.characterPortraits = this.dataProvider.getCharacterPortraits();
 
-    //Sets characterPortrait based off of index
-    this.currentCharacterPortrait = this.characterPortraits[0];
-
     //Grabs characterPortraitIndex from CharacterPortraitSelectionPage.ts
-    this.event.subscribe('characterPortraitIndex', characterPortraitIndex=>{
+    this.event.subscribe('characterPortraitIndex', characterPortraitIndex => {
       this.currentCharacterPortrait = this.characterPortraits[characterPortraitIndex];
-      this.dataProvider.characterPortraitIndex = characterPortraitIndex;
     })
+
+    //Initializes to last selection of character portrait
+    this.storage.get('characterPortait').then((characterPortait) => {
+      this.currentCharacterPortrait = this.characterPortraits[characterPortait];
+      this.characterPortaitIndex = characterPortait;
+    });
   }
 
-  openCharacterPortraitSelectionPage(){  
+  openCharacterPortraitSelectionPage() {
     this.navCtrl.push(CharacterPortraitSelectionPage);
   }
 
-  ionViewDidEnter(){
-    console.log(this.dataProvider.characterPortraitIndex);
+  ionViewDidEnter() {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InfoPage');
   }
-
-  
 }
